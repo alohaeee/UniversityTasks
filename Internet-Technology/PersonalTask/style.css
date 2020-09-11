@@ -1,0 +1,64 @@
+body
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    margin-left:10%;
+    margin-right:10%;
+
+}
+
+#main
+{
+    background-color: rgb(255, 203, 211);
+    box-shadow: 0px 0px 5px 5px paleturquoise;
+    border: 1px solid palevioletred;
+    border-radius: 50px 20px;
+
+    text-indent: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#variantBlock div[name="variant"]
+{
+    border: 1px solid palevioletred;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+
+#variantBlock div input
+{
+    width: 300px;
+    height: min-content;
+    border: 1px solid lightcoral;
+    outline: none;
+    border-radius: 20px;
+    background-color: powderblue;
+}
+
+#variantBlock div input
+{
+    width: 20%;
+    height:40px;
+
+    font-size:18px;
+
+    border: 1px solid lightcoral;
+    background-color: lightcyan;
+    outline: none;
+
+    border-radius: 5px;
+}
+
+#variantBlock div input:hover{   
+    box-shadow: 0 3px 5px 3px lightcoral;
+    border: 1px solid rgb(131, 235, 248);
+    border-radius: 5px;
+    
+}
+
+#variantBlock ol
+{
+    padding-left: 5;
+}

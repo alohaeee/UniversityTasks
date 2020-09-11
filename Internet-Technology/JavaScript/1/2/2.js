@@ -1,0 +1,11 @@
+a="background-color:#00ffff; color:#ff00ff;";
+a+="font-size:24pt; font-family:'Times New Roman'";
+naim='Сеть магазинов "ВСЁ ДЛЯ ДОМА"';
+var da=new Date();
+var d=da.getDate().toString();
+d = da.getDate().toString().length > 1 ? da.getDate() : "0" + da.getDate(); 
+d += ".";
+d += da.getMonth().toString().length > 1 ? (da.getMonth()+1) : "0" + (da.getMonth()+1);
+d += ".";
+d += da.getFullYear();
+document.write('<P align=center style= "'+a+'">'+ naim+'</p><P>Сегодня '+d+'</p>');

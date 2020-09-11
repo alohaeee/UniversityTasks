@@ -1,0 +1,31 @@
+body
+{
+    background-color: rgb(253, 226, 235);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.set
+{
+    width: max-content;
+    margin:0 auto;
+
+    background-color: pink;
+}
+
+label
+{
+    display: inline-block;
+    width: 20%;
+    min-width: max-content;
+}
+legend
+{
+    font-size: 2rem;   
+}
+.degreeinput
+{
+    text-align: right;
+    text-indent: 10%;
+    width:10%;
+}

@@ -1,0 +1,50 @@
+* {
+    font-family:Arial;
+    font-size:14p;
+    color:rgb(0, 51, 102);
+    
+}
+
+p {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left:10%;
+    margin-right:10%;
+    
+}
+.leftPad
+{
+    padding-left: 10%;
+}
+
+a {
+    display: block;
+    text-align: justify;
+    margin-left:10%;
+    
+}
+h4
+{
+    margin-left:10%;
+}
+li p{
+    text-align: justify;
+    margin: 0 auto;
+    margin-right:20%
+}
+ol {
+    margin-left: 15%;
+}
+.formula
+{
+    
+    font-weight: bold;
+    font-size: 120%;
+    text-align: center;
+    background: rgb(57, 95, 133);
+    margin: 1% 30% 1% 30%;
+    width: 40%;
+    padding: 2% 0% 2% 0%;
+    border-radius: 20%;
+    color:gold;
+}

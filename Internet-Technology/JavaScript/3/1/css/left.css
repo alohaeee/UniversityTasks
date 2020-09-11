@@ -1,0 +1,38 @@
+ul{
+    border:solid 2px;
+    margin:0 auto;
+}
+ul:before{
+    display:block;
+    content:attr(aria-label);
+    font-size:120%;
+    margin-left: -10%;
+    align-self: left;
+}
+
+.left-block{
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto;
+    background: pink;    
+    width:30%;
+    font-size:16px; 
+}
+label { display: inline-block; width: 45%; min-width: max-content; }
+
+select 
+{
+    width: 50%;
+}
+
+.inputNum
+{
+    max-width: 50%;
+}
+
+.formone
+{
+    grid-column: auto;
+    width:100%;
+    height:100%;
+}

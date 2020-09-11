@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Мебель</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="item-header">
+                <h1 class="title">
+                    Магазин мебели
+                </h1>
+            </div>
+            <div class="item-menu">
+                <form method="post" action="">
+                    <fieldset>
+                        <legend>
+                            Заказать мебель
+                        </legend>
+                        <label for="f" >Мебель</label>
+                        <select id="f" name="furniture">
+                            <option value="" selected>Выберите мебель</option>
+                            <option value="Диван">Диван</option>
+                            <option value="Шкаф">Шкаф</option>
+                            <option value="Кресло">Кресло</option>
+                            <option value="Табурет">Табурет</option>
+                        </select>
+                        <br>
+                        <label for="m" >Материал</label>
+                        <select id="m" name="material">
+                            <option value="" selected>Выберите материал</option>
+                            <option value="Дуб">Дуб</option>
+                            <option value="Ольха">Сосна</option>
+                            <option value="Клён">Клён</option>
+                            <option value="Липа">Липа</option>
+                        </select>
+                        <br>
+                        <label for="n">Количество товара</label>
+                        <input id="n" name="num" type="text" class="inputText" placeholder="Количество товара">
+                        <br>
+                        <br>
+                        <input id="s" type="submit" class="submit" placeholder="Отправить" onclick="formCheck()">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="item-main">
+                <input type="button" class="button-left" value="<" onclick="changePicture(-1)">
+                <div class="image-holder">
+                    <img id="imgs" class="main-image" src="" onclick="changePicture(1)">
+                </div>
+                <input type="button" class="button-right" value=">" onclick="changePicture(1)">
+                <div class="cur-image">
+                    <p id="curPic" class="label-curPic"></p>
+                </div>
+            </div>
+            <div class="item-footer">
+                
+            </div>
+        </div>
+          
+    </body>
+    <script src="../js/PictureMover.js"></script>
+    <script src="../js/form.js"></script>
+</html>

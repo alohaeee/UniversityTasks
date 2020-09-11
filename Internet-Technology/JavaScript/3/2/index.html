@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Тригонометрические функции</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        
+            <fieldset class="set">
+                <legend>Тригонометрические функции</legend>
+                <div>
+                    <div>
+                        <label for="d">Градусы:</label>
+                        <input id="d" type="text" class="degreeinput" placeholder="0" onchange=onChangeCheck(this) value="0">
+                    </div>
+                    <div>
+                        <label for="f">Функция:</label>
+                        <select id="f" onchange="onChangeFunction(this)">
+                            <option value="sin">Синус</option>
+                            <option value="cos">Косинус</option>
+                            <option value="tan">Тангенс</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <p><input type="submit" value="Вычислить" onclick="onSubmition()"></p>
+                </div>
+                <div>
+                    <p id="a"> 
+                        
+                    </p>
+                </div>
+                
+            </fieldset>
+        
+    </body>
+    <script src="function.js"></script>
+    
+</html>

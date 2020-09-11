@@ -1,0 +1,119 @@
+html{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 10% auto 5%;
+    grid-template-areas: "header header"
+                         "menu  main"
+                         "footer footer";
+}
+
+.item-header
+{
+    grid-area: header; 
+    background-color: palevioletred;
+    border:solid 2px;
+}
+.title{
+    text-align: center;
+    text-indent: 4%;
+}
+.item-menu
+{
+    grid-area: menu;
+    background-color: pink;
+}
+fieldset
+{
+    border-color: black;
+}
+legend
+{
+    font-size:1.5rem;
+    text-decoration: underline;
+}
+label
+{
+    display: inline-block;
+    width: 50%;
+    min-width: max-content;
+}
+select
+{
+    margin:0 auto;
+    width: 45%;
+    min-width: max-content;
+}
+.inputText
+{
+    width: 45%;
+}
+.submit
+{
+    display: block;
+    float:right;
+    margin-right:4%;
+}
+.item-main
+{
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 10% 1fr 3% 10%;
+    grid-template-areas: ". . ."
+                        "button-left image-holder button-right"
+                        ". cur-image ."
+                        ". . .";
+    
+    background-color: lavenderblush;
+
+}
+.button-left
+{
+    grid-area: button-left;
+    
+}
+.button-right
+{
+    grid-area:button-right;
+}
+.image-holder
+{
+    grid-area:image-holder;
+    border:solid 2px;  
+    background-color: pink;
+    
+}
+.main-image
+{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    margin:0 auto;
+}
+.cur-image
+{
+    grid-area:cur-image;
+    align-content: center;
+}
+.label-curpic
+{
+    text-align: center;
+    margin:0 auto;
+}
+.item-footer
+{
+    grid-area: footer;
+    background-color: palevioletred;
+    border:solid 2px;
+}
+
+
+    

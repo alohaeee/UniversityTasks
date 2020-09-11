@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Задание 2.1</title>
+    </head>
+    <body>
+        
+        <h1 align="center">Пять событий с мышкой</h1>
+        <div onClick=changeFirst()>
+            Щёлкните по мне мышкой
+        </div>
+        <div onmousedown=changeBGColor(this,"pink") onMouseUp=changeBGColor(this,"red")>
+            На этом тексте нажмите, подержите и отпустите левую кнопку мышки
+        </div> 
+        <div onmouseover=changeBGColor(this,"yellow") onmouseout=changeBGColor(this,"green")>
+            Медленно проведите курсором мышки по этой надписи
+        </div>
+        <script src="1.js"></script>
+    </body>
+</html>

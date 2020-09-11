@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>TimerInput.qml</file>
+        <file>worker.js</file>
+    </qresource>
+</RCC>

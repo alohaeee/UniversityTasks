@@ -1,0 +1,18 @@
+FAQ
+
+|******FAQ******|
+Here is right structure of txt file:
+Triangle Matrix/Matrix/List  /* First one u need to write graph's storage type
+Towns:n 	/* n - amount of towns/nodes in graph
+Railway:       /* Here is first type of roads(ONLY RAILWAY!)
+2 4 5 	     /* Some pathes
+3 2 1
+. . .
+Highway: /* Second type of roads(ONLY HIGHWAY!)
+2 1 4
+1 2 6
+. . .
+
+Restart Program to continue.
+
+

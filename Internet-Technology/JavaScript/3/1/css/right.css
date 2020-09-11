@@ -1,0 +1,33 @@
+.right-block{
+    background: lavenderblush;
+    width:70%;
+    justify-content: center;
+    align-items: center;
+    flex: 1 auto;
+}
+.imgholder
+{
+    border:solid 2px;
+    margin:0 auto;
+    width: 90%;
+    max-height: 90%;
+    min-height: min-content;
+}
+.image{    
+    display: block;        
+    margin:0 auto;   
+    max-height: 100%;
+    max-width: 100%;                      
+}
+.changebutton{
+    margin:0 auto;
+    width:3%;    
+}
+.leftbutton{
+    margin-left: 1%;
+}
+.rightbutton{
+    margin-right:1%;
+}
+
+

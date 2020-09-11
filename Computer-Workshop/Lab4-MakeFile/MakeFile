@@ -1,0 +1,145 @@
+CXX		  := g++
+CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb
+
+
+# Folder structure
+BIN		:= bin
+SRC		:= source
+INCLUDE	:= include
+LIB		:= lib
+
+
+# Vars
+EXECUTABLE	:= main
+
+
+# Pathes to project's dirs
+LAB1_1 := Lab1-GCC_FLAGS/1
+LAB1_2 := Lab1-GCC_FLAGS/2
+LAB1_3 := Lab1-GCC_FLAGS/3
+LAB2_1 := Lab2-GDB/1
+LAB2_2 := Lab2-GDB/2
+LAB2_3 := Lab2-GDB/3
+LAB3_1 := LAB3-DLL
+
+
+all: lab1_1 lab1_2 lab1_3 lab2_1 lab2_2 lab2_3 lab3_1
+
+# LAB1_1
+$(LAB1_1)/$(BIN)/$(EXECUTABLE): $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) $^ -o $@
+$(LAB1_1)/$(BIN)/$(EXECUTABLE).i: $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -E $^ -o $@
+$(LAB1_1)/$(BIN)/$(EXECUTABLE).s: $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -S $^ -o $@
+$(LAB1_1)/$(BIN)/$(EXECUTABLE).o: $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -c $^ -o $@
+$(LAB1_1)/$(BIN)/optim.s: $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -S -O1 $^ -o $@
+$(LAB1_1)/$(BIN)/optim2.s: $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -S -O2 $^ -o $@
+$(LAB1_1)/$(BIN)/optim3.s: $(LAB1_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -S -O3 $^ -o $@
+
+optim: $(LAB1_1)/$(BIN)/optim.s $(LAB1_1)/$(BIN)/optim2.s $(LAB1_1)/$(BIN)/optim3.s
+
+lab1_1: $(LAB1_1)/$(BIN)/$(EXECUTABLE) $(LAB1_1)/$(BIN)/$(EXECUTABLE).i $(LAB1_1)/$(BIN)/$(EXECUTABLE).s $(LAB1_1)/$(BIN)/$(EXECUTABLE).o optim
+
+
+
+# LAB1_2
+
+## Linking object files in executable
+
+$(LAB1_2)/$(BIN)/funArray.o: $(LAB1_2)/$(SRC)/funArray.cpp
+	$(CXX) -I$(LAB1_2)/$(INCLUDE) -c $(LAB1_2)/$(SRC)/funArray.cpp -o $@
+
+$(LAB1_2)/$(BIN)/ioArray.o: $(LAB1_2)/$(SRC)/ioArray.cpp
+	$(CXX) -I$(LAB1_2)/$(INCLUDE) -c $(LAB1_2)/$(SRC)/ioArray.cpp -o $@
+
+$(LAB1_2)/$(BIN)/$(EXECUTABLE)Object: $(LAB1_2)/$(SRC)/$(EXECUTABLE).cpp $(LAB1_2)/$(BIN)/funArray.o $(LAB1_2)/$(BIN)/ioArray.o 
+	$(CXX) $(CXX_FLAGS) -I$(LAB1_2)/$(INCLUDE) $^ -o $@
+
+## Make Static Library and link into exe
+$(LAB1_2)/$(LIB)/libioArray.a : $(LAB1_2)/$(BIN)/ioArray.o
+	ar crs $@ $^
+
+$(LAB1_2)/$(BIN)/$(EXECUTABLE)Static: $(LAB1_2)/$(SRC)/$(EXECUTABLE).cpp $(LAB1_2)/$(LIB)/libioArray.a $(LAB1_2)/$(BIN)/funArray.o 
+	$(CXX) $(CXX_FLAGS) -I$(LAB1_2)/$(INCLUDE) -L$(LAB1_2)/$(LIB) $(LAB1_2)/$(SRC)/$(EXECUTABLE).cpp $(LAB1_2)/$(BIN)/funArray.o -lioArray -o $@
+
+lab1_2: $(LAB1_2)/$(BIN)/$(EXECUTABLE)Object $(LAB1_2)/$(BIN)/$(EXECUTABLE)Static
+
+
+
+# LAB1_3
+
+$(LAB1_3)/$(BIN)/funArray2.o: $(LAB1_3)/$(SRC)/funArray2.cpp
+	$(CXX) $(CXX_FLAGS) -I$(LAB1_3)/$(INCLUDE) -c $^ -o $@
+
+$(LAB1_3)/$(LIB)/libioArray.a: $(LAB1_2)/$(LIB)/libioArray.a 
+	cp $(LAB1_2)/$(LIB)/libioArray.a $(LAB1_3)/$(LIB)
+
+## NOTE: using lib from lab1_2 !!!
+$(LAB1_3)/$(BIN)/$(EXECUTABLE): $(LAB1_3)/$(SRC)/$(EXECUTABLE).cpp $(LAB1_3)/$(BIN)/funArray2.o $(LAB1_3)/$(LIB)/libioArray.a 
+	$(CXX) $(CXX_FLAGS) -I$(LAB1_3)/$(INCLUDE) -L$(LAB1_3)/$(LIB) $(LAB1_3)/$(SRC)/$(EXECUTABLE).cpp $(LAB1_3)/$(BIN)/funArray2.o -lioArray -o $@
+
+lab1_3: $(LAB1_3)/$(BIN)/$(EXECUTABLE)
+
+# LAB2_1
+
+lab2_1: $(LAB2_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -g $^ -o $(LAB2_1)/$(BIN)/$(EXECUTABLE)
+
+# LAB2_2
+
+lab2_2: $(LAB2_2)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -g $^ -o $(LAB2_2)/$(BIN)/$(EXECUTABLE)
+
+# LAB2_3
+$(LAB2_3)/$(BIN)/ioFunc.o: $(LAB2_3)/$(SRC)/ioFunc.cpp
+	$(CXX) $(CXX_FLAGS) -c -g -I$(LAB2_3)/$(INCLUDE) $^ -o $@
+$(LAB2_3)/$(LIB)/libioFunc.a: $(LAB2_3)/$(BIN)/ioFunc.o
+	ar crs $@ $^
+$(LAB2_3)/$(BIN)/$(EXECUTABLE): $(LAB2_3)/$(SRC)/$(EXECUTABLE).cpp $(LAB2_3)/$(LIB)/libioFunc.a
+	$(CXX) $(CXX_FLAGS) -g -I$(LAB2_3)/$(INCLUDE) -L$(LAB2_3)/$(LIB) $(LAB2_3)/$(SRC)/$(EXECUTABLE).cpp -lioFunc
+
+lab2_3: $(LAB2_3)/$(BIN)/$(EXECUTABLE)
+
+
+# LAB3_1
+
+$(LAB3_1)/$(BIN)/load.o : $(LAB3_1)/$(SRC)/load.cpp
+	$(CXX) $(CXX_FLAGS) -c -fPIC -I$(LAB3_1)/$(INCLUDE) $^ -o $@
+$(LAB3_1)/$(BIN)/matrix.o : $(LAB3_1)/$(SRC)/matrix.cpp
+	$(CXX) $(CXX_FLAGS) -c -fPIC -I$(LAB3_1)/$(INCLUDE) $^ -o $@
+$(LAB3_1)/$(BIN)/myarray.o : $(LAB3_1)/$(SRC)/myarray.cpp
+	$(CXX) $(CXX_FLAGS) -c -fPIC -I$(LAB3_1)/$(INCLUDE) $^ -o $@
+$(LAB3_1)/$(BIN)/$(EXECUTABLE).o : $(LAB3_1)/$(SRC)/$(EXECUTABLE).cpp
+	$(CXX) $(CXX_FLAGS) -c -fPIC -I$(LAB3_1)/$(INCLUDE) $^ -o $@
+
+/usr/lib/libload.so : $(LAB3_1)/$(BIN)/load.o
+	sudo $(CXX) $(CXX_FLAGS) -shared $^ -o $@
+/usr/lib/libmatrix.so : $(LAB3_1)/$(BIN)/matrix.o
+	sudo $(CXX) $(CXX_FLAGS) -shared $^ -o $@
+/usr/lib/libmyarray.so : $(LAB3_1)/$(BIN)/myarray.o
+	sudo $(CXX) $(CXX_FLAGS) -shared $^ -o $@
+
+cleanLab3_1: 
+	rm -rf $(LAB3_1)/$(BIN)/*.o
+cleanLab3_1_SO:
+	sudo rm -rf /usr/lib/libload.so
+	sudo rm -rf /usr/lib/libmatrix.so
+	sudo rm -rf /usr/lib/libmyarray.so
+archiveLab3_1: /usr/lib/libmyarray.so /usr/lib/libmatrix.so /usr/lib/libload.so
+	cp /usr/lib/libload.so $(LAB3_1)/$(LIB)
+	cp /usr/lib/libmatrix.so $(LAB3_1)/$(LIB)
+	cp /usr/lib/libmyarray.so $(LAB3_1)/$(LIB)
+	tar -cvf $(LAB3_1)/$(LIB)/libs.tar.gz $(LAB3_1)/$(LIB)
+
+$(LAB3_1)/$(BIN)/$(EXECUTABLE) : $(LAB3_1)/$(BIN)/$(EXECUTABLE).o  /usr/lib/libmyarray.so /usr/lib/libmatrix.so /usr/lib/libload.so 
+	$(CXX) $(CXX_FLAGS) -I$(LAB3_1)/$(INCLUDE) -L$(LAB3_1)/$(LIB) $(LAB3_1)/$(BIN)/$(EXECUTABLE).o -o $@ -lload -ldl
+
+lab3_1: $(LAB3_1)/$(BIN)/$(EXECUTABLE) cleanLab3_1 archiveLab3_1
+	
+
+

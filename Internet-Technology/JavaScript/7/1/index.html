@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Тригонометрические функции</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main_container">
+        <h1>Расчет тригонометрических функций в диапазоне</h1>
+        <form>
+            <div id="select_container">
+                <label for="function">Функция</label>
+                <select id="function">
+                    <option value="sin">Синус</option>
+                    <option value="cos">Косинус</option>
+                    <option value="tan">Тангенс</option>
+                </select>
+            </div>
+            <div id="input_container">
+                <label for="from">От</label>
+                <input type="text" name="" id="from">
+            </div>
+            
+            <div id="input_container">
+                <label for="to">До</label>
+                <input type="text" name="" id="to">
+            </div>
+
+            <div id="input_container">
+                <label for="step">Шаг</label>
+                <input type="text" name="" id="step">
+            </div>
+            
+            <input type="submit" value="Сосчитать" id="submit" onclick="makeTable(event)">
+        </form>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,86 @@
+body{
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+h1{
+    text-align: center;
+    box-shadow: purple;
+}
+#main_container
+{
+    background-color: pink;
+    box-shadow: 0 0 5px;	
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#select_container
+{
+    margin: 0% 5% 0% 5%;
+}
+#input_container
+{
+    margin: 3% 5% 3% 5%;
+}
+
+#input_container label , #select_container label
+{
+    display: block;
+}
+#select_container select
+{
+    width: 30%;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    border: 1px solid lightcoral;
+    outline: none;
+    border-radius: 5px;
+    font-size:15px;
+}
+#input_container input
+{
+    width: 30%;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    
+    border: 1px solid lightcoral;
+    outline: none;
+    border-radius: 5px;
+    font-size:15px;
+
+    display: block; 
+}
+#input_container input:focus{   
+    box-shadow: 0 0 5px 3px paleturquoise;
+    border: 1px solid rgb(131, 235, 248);
+}
+
+#submit
+{
+    margin: 2% 5% 5% 5%;
+    width: 20%;
+    height:40px;
+
+    font-size:18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+
+
+    border: 1px solid lightcoral;
+    background-color: white;
+    outline: none;
+
+    border-radius: 5px;
+}
+#submit:focus
+{
+    background-color: rgb(218, 254, 255);
+    
+}
+#submit:hover{   
+    box-shadow: 0 0 5px 3px paleturquoise;
+    border: 1px solid rgb(131, 235, 248);
+    border-radius: 5px;
+}

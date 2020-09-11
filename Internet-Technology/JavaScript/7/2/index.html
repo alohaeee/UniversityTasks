@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Учёт поступления товаров</title>
+    <style>
+        body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1
+        {
+            text-align: center;
+        }
+        table
+        {
+
+            margin:0 auto;
+            border-radius: 5px;
+            
+            background-color: pink;
+            border: 1px solid;
+            border-collapse: collapse;
+            
+        }
+        th,td
+        {
+            border: 2px solid;
+        }
+        div
+        {
+            text-align: left;
+            margin:0 auto;
+            width:300px;
+        }
+        div label
+        {
+            display: inline-block;
+            margin-right: 20px;
+            width: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Учёт поступления товаров</h1>
+    <table id="table">
+        <tr>
+            <th>Наименование товаров</th>
+            <th>цена за единицу</th>
+            <th>количество</th>
+            <th>стоимость</th>
+        </tr>
+        <tr id="1">
+            <td>СТОл</td>
+            <td>2000</td>
+            <td>20</td>
+            <td></td>
+        </tr>
+        <tr id="2">
+            <td>дверь</td>
+            <td>5000</td>
+            <td>10</td>
+            <td></td>
+        </tr>
+        <tr id="3">
+            <td>шкаф</td>
+            <td>7000</td>
+            <td>5</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td colspan="3">Итого</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <div>
+        <h3>Изменение цены и количество</h3>
+        <label for="select">Товар</label>
+        <select name="" id="select">
+            <option value="1">СТОл</option>
+            <option value="2">дверь</option>
+            <option value="3">шкаф</option>
+        </select>
+        <br>
+        <label for="price">Цена</label>
+        <input type="text" name="" id="price">
+        <br>
+        <label for="count">Количество</label>
+        <input type="text" name="" id="count">
+
+        <input type="submit" value="Ввод" onclick="enter()">
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

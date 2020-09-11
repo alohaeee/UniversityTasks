@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>999</width>
+    <height>692</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Таблицы</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QTableView" name="tableView"/>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QLabel" name="looserLabel">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTableView" name="highTableHead"/>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QTableView" name="groupTable"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="highLabel">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QTableView" name="looserTable"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>999</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Таблица</string>
+    </property>
+    <addaction name="actionShowTable"/>
+    <addaction name="actionShowHighest"/>
+    <addaction name="actionDontGetInto"/>
+    <addaction name="actionShowGroups"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="actionEditHighest"/>
+    <addaction name="actionEditDontGetInto"/>
+    <addaction name="actionEditGroups"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionShowTable"/>
+   <addaction name="actionShowHighest"/>
+   <addaction name="actionDontGetInto"/>
+   <addaction name="actionShowGroups"/>
+   <addaction name="separator"/>
+   <addaction name="actionEditHighest"/>
+   <addaction name="actionEditDontGetInto"/>
+   <addaction name="actionEditGroups"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.page.new.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.page.new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.save.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.axis.x.letter.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.axis.x.letter.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.add.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.add.svg</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionEditHighest">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.edit.box.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.edit.box.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Настроить таблицу лучших</string>
+   </property>
+   <property name="toolTip">
+    <string>Настроить таблицу лучших</string>
+   </property>
+  </action>
+  <action name="actionShowHighest">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.list.star.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.list.star.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Показать лучших</string>
+   </property>
+  </action>
+  <action name="actionShowTable">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.table.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.table.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Показать таблицу</string>
+   </property>
+   <property name="toolTip">
+    <string>Показать таблицу</string>
+   </property>
+  </action>
+  <action name="actionDontGetInto">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.smiley.cry.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.smiley.cry.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Показать непрошедших</string>
+   </property>
+  </action>
+  <action name="actionEditDontGetInto">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.people.checkbox.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.people.checkbox.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Настроить таблицу непрошедших</string>
+   </property>
+   <property name="toolTip">
+    <string>Настроить таблицу непрошедших</string>
+   </property>
+  </action>
+  <action name="actionShowGroups">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.group.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.group.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Показать группы</string>
+   </property>
+   <property name="toolTip">
+    <string>Показать группы</string>
+   </property>
+  </action>
+  <action name="actionEditGroups">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.group.add.svg</normaloff>:/WinIcons/WindowsIcons-master/WindowsPhone/svg/appbar.group.add.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Настроить группы</string>
+   </property>
+   <property name="toolTip">
+    <string>Настроить количество человек в группах</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="mainwindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>

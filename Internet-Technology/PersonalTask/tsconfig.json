@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "types": ["node"],
+        "typeRoots": ["C:/Users/Владислав/node_modules/@types",
+            "C:/Users/Владислав/node_modules/google-search-results-nodejs"],
+        "removeComments": true,
+        "outFile": "script.js",
+        "module": "amd"
+    },
+    "files":[
+        "script.ts",
+    ]
+}

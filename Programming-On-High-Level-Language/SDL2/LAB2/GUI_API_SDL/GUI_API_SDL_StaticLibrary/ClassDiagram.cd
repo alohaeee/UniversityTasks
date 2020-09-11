@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Call Back System&#xD;&#xA;">
+    <Position X="9.372" Y="0.51" Height="0.386" Width="1.292" />
+  </Comment>
+  <Comment CommentText="Library Tree">
+    <Position X="5.203" Y="0.612" Height="0.371" Width="0.913" />
+  </Comment>
+  <Comment CommentText="Media">
+    <Position X="16.412" Y="0.5" Height="0.291" Width="0.7" />
+  </Comment>
+  <Class Name="GUI_API::CallBack" Collapsed="true">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\GUI_API_CallBack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Widget" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACUACAAAwgAAAAAQAIQAAAAAAAAAIAAAAAUAAA=</HashCode>
+      <FileName>include\GUI_API_Widget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Application" Collapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAhAAABAACAAAAICAAAAAAEACAAgAAIIAABAUAAA=</HashCode>
+      <FileName>include\GUI_API_Application.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Window" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAEAABABAAAAAAAEQAAAQAAAYAoCABUAAA=</HashCode>
+      <FileName>include\GUI_API_Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Signal" Collapsed="true">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\GUI_API_BaseApp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::BaseApp" Collapsed="true">
+    <Position X="4.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABAAAAAAACAAIBAAFAIAAAAAAAAAIBAAAAUAAA=</HashCode>
+      <FileName>include\GUI_API_BaseApp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Label" Collapsed="true">
+    <Position X="3" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAEQAIAAAAAAAAAAAAAACAgAAIAIEAAAAUAAQ=</HashCode>
+      <FileName>include\GUI_API_Label.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ErrorLoger" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>include\GUI_API_ErrorLoger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Media::Fonts" Collapsed="true">
+    <Position X="15.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAACQAAAIAAAACAAAAAA=</HashCode>
+      <FileName>include\GUI_API_Media.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI_API::Button" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAACAAAAAAAAAAABAAAACAgAAAQJAAIAABAEUIAA=</HashCode>
+      <FileName>include\GUI_API_Button.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ErrorValue" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>include\GUI_API_ErrorLoger.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -13,6 +13,10 @@ add_executable(FoodTrack
         src/main.cpp
         src/QueueModel.cpp
         src/MainWindow.cpp
+        src/DishTableModel.cpp
+        src/OrderModel.cpp
+        src/FinishModel.cpp
+        src/Simulator.cpp
         src/MainWindow.ui)
 
 target_include_directories(FoodTrack PRIVATE src/)

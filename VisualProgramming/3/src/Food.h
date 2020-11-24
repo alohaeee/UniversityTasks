@@ -7,13 +7,12 @@
 #include <QVector>
 #include <array>
 #include <cstdint>
-
-//"Картошка:200,30;30;Main";
+#include <random>
 
 class Dish
 {
 public:
-    using PriceType = float;
+    using PriceType = int;
 
     Dish() = default;
 
@@ -26,18 +25,40 @@ public:
         Size
     };
 
+    static QString typeToString(DishType type)
+    {
+        switch (type)
+        {
+        case Main:
+            return "Основное";
+        case Drinks:
+            return "Напитки";
+        case Snacks:
+            return "Снеки";
+        case Garnirshs:
+            return "Гарнир";
+        default:
+            return "";
+        }
+    }
+
     QString name;
     PriceType price;
     PriceType profit;
-    QTime timeMade;
-    // DishType type;
+    int cookTime;
 };
+
+inline QString FromMSToString(int ms)
+{
+    return QTime(0, 0, 0).addMSecs(ms).toString("hh:mm:ss");
+}
 
 using IdType = uint32_t;
 class DishList
 {
 public:
-public:
+    //    DishList(Dish::DishType type) : m_type{type}
+    //    {}
     IdType AddDish(const Dish &dish)
     {
         m_dishList.push_back(dish);
@@ -60,17 +81,35 @@ public:
     {
         return m_dishList;
     }
+    inline std::size_t Size() const
+    {
+        return m_dishList.size();
+    }
+    inline Dish::DishType GetType()
+    {
+        return m_type;
+    }
 
 private:
+    Dish::DishType m_type;
     QVector<Dish> m_dishList;
 };
 
 class DishManager
 {
 public:
-    inline DishList &GetCategory(Dish::DishType i)
+    static inline DishList &GetCategory(Dish::DishType i)
     {
         return list[i];
+    }
+
+    static std::size_t ListCount()
+    {
+        return Dish::Size;
+    }
+    static const std::array<DishList, Dish::Size> &GetLists()
+    {
+        return list;
     }
 
 private:

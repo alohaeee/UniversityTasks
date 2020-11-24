@@ -2,13 +2,6 @@
 
 #include <QApplication>
 
-#include <chrono>
-#include <ctime>
-#include <iostream>
-
-#include <QDebug>
-#include <QTime>
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
